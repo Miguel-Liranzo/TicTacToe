@@ -77,6 +77,8 @@ function handleTurn(event) {
         win = getWinner();
     }
 
+    win ? document.getElementById('board').removeEventListener('click', handleTurn) : {};
+    
     render();
 }
 
