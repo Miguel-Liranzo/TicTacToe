@@ -1,6 +1,7 @@
 body {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: grey;
 }
 
 h2 {
@@ -35,6 +36,8 @@ h2 {
     vertical-align: center;
     line-height: 140px;
     font-size: 75px;
+    background-color: white;
+    border-radius: 10px;
 }
 
 #reset-button {
@@ -44,4 +47,5 @@ h2 {
     height: 55px;
     width: 100px;
     margin: 10px;
+    border-radius: 15px;
 }

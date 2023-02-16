@@ -25,6 +25,7 @@ let win;
 
 const squares = Array.from(document.querySelectorAll('#board div'));
 const messages = document.querySelector('h2');
+const image = document.getElementById('winning-gif');
 
 
 
@@ -52,6 +53,8 @@ function init() {
     turn = 'X';
     win = undefined;
 
+    image.style.display = 'none';
+
     render();
 }
 
@@ -71,14 +74,18 @@ function handleTurn(event) {
 
     if (board[idx] === '') {
         board[idx] = turn;
+        squares[idx]
 
         turn = turn === 'X' ? 'O' : 'X';
 
         win = getWinner();
     }
-
-    win ? document.getElementById('board').removeEventListener('click', handleTurn) : {};
     
+    if (win) {
+        document.getElementById('board').removeEventListener('click', handleTurn);
+        image.style.display = '';
+    }
+
     render();
 }
 
